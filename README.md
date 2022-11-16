@@ -81,6 +81,7 @@ dir c:\ProgramData\Anaconda2\Scripts\cpplint.exe
 * `cpplint.languages`: set the allowed vscode language identifiers that cpplint will check *(Currently only on single file mode)*
 * `cpplint.headers`: set the allowed header extensions that cpplint will consider to be header files
 * `cpplint.verbose`: verbose level, errors with lower verbosity levels have lower confidence and are more likely to be false positives
+* `cpplint.regex`: the regular expression that is used in analyzing the cpplint output
 
 ## Known Issues
 

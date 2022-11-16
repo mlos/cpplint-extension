@@ -77,7 +77,6 @@ export class ConfigManager {
             }
 
             this.config['cpplintPath'] = cpplintPath;
-
             var linelength = settings.get("lineLength", 80);
             this.config['lineLength'] = linelength;
 
@@ -114,6 +113,9 @@ export class ConfigManager {
 
             var verbose = settings.get("verbose", 0)
             this.config['verbose'] = verbose;
+
+            var regex = settings.get("regex", "")
+            this.config['regex'] = regex;
         }
         return this.config;
     }

@@ -33,10 +33,11 @@ function cpplintSeverityToDiagnosticSeverity(severity: string): vscode.Diagnosti
 }
 
 export function analysisResult(diagnosticCollection: vscode.DiagnosticCollection, result: string) {
+    let config = ConfigManager.getInstance().getConfig();
     diagnosticCollection.clear();
 
     // 1 = path, 2 = line, 3 = severity, 4 = message
-    let regex = /^(.*):([0-9]+):\s*(\w+):(.*\s+\[.*\])\s+\[([0-9]+)\]/gm;
+    let regex = new RegExp(config['regex'], "gm");
     let regexArray: RegExpExecArray;
     let fileData: { [key: string]: RegExpExecArray[] } = {};
     while (regexArray = regex.exec(result)) {
